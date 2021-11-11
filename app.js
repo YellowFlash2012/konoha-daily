@@ -1,7 +1,6 @@
 const url = 'https://jsonplaceholder.typicode.com/posts'
 const grid = document.querySelector('.user-grid');
 const users = document.querySelectorAll('.user');
-const user_num = document.querySelector('a').value;
 const title = document.querySelector('.title');
 const body = document.querySelector('.body');
 
@@ -13,6 +12,8 @@ fetch(url)
         let post_title = data[0].title;
         let post_content = data[0].body;
 
+        
+
 
         users.forEach((user) => {
             
@@ -21,6 +22,9 @@ fetch(url)
                 if (user_id == user.innerText) {
                     title.innerText = post_title;
                     body.innerText = post_content;
+                } else {
+                    title.innerText = '';
+                    body.innerText = '';
                 }
                   
             })
